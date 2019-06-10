@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900&display=swap");
+body {
+  font-family: 'Lato', sans-serif; }
+
+.carousel-cell {
+  width: 100%;
+  /* full width */
+  height: 50vh;
+  min-height: 250px;
+  /* min height of carousel */
+  margin-right: 5px;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(90%); }
+  .carousel-cell:hover {
+    filter: brightness(100%); }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .container p {
+    color: #fff;
+    text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold; }
+
+@media (max-width: 767px) {
+  .container p {
+    font-size: 40px; } }
+
+/*# sourceMappingURL=style.css.map */
