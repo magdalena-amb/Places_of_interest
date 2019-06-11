@@ -16,19 +16,21 @@ body {
     filter: brightness(100%); }
 
 .container {
+  width: 70%;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; }
-  .container p {
-    color: #fff;
-    text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
+  height: 85%;
+  margin: auto;
+  color: #fff;
+  text-align: center; }
+  .container h1 {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
     letter-spacing: 3px;
-    text-align: center;
-    font-size: 60px; }
+    font-size: 60px;
+    font-weight: normal; }
+  .container p {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+    font-size: 20px; }
 
 .restart {
   position: absolute;
@@ -49,7 +51,7 @@ body {
   background: #ececec; }
 
 @media (max-width: 767px) {
-  .container p {
+  .container h1 {
     font-size: 40px; }
 
   /* no circle */
