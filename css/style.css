@@ -28,11 +28,44 @@ body {
     text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
     letter-spacing: 3px;
     text-align: center;
-    font-size: 60px;
-    font-weight: bold; }
+    font-size: 60px; }
+
+.restart {
+  position: absolute;
+  top: 45vh;
+  right: 20px;
+  z-index: 100;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 50px; }
+
+.restart:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px #cccdce; }
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #ececec; }
 
 @media (max-width: 767px) {
   .container p {
-    font-size: 40px; } }
+    font-size: 40px; }
+
+  /* no circle */
+  .flickity-button:not(.restart) {
+    background: transparent; }
+
+  /* icon color */
+  .flickity-button-icon {
+    fill: white; }
+
+  /* icon color */
+  .flickity-button-icon:focus {
+    fill: #000; }
+
+  /* hide disabled button */
+  .flickity-button:disabled {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */
