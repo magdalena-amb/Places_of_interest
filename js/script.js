@@ -2,6 +2,7 @@
 'use strict';
 
 {
+
  //Mustache templates 
  var imageList = document.getElementById('image-list');
  var imageItem = document.getElementById('template-image').innerHTML;
@@ -25,7 +26,7 @@ var flkty = new Flickity( elem, {
  contain: true,
  pageDots: false,
  //hash.js script added for this to work
- hash: true 
+ hash: true
 });
 
 //restart button
@@ -47,13 +48,15 @@ flkty.on( 'scroll', function( progress ) {
   var map; // zmienna globalna przechowująca obiekt mapy
   var markers = []; // w tej tablicy przechowujemy markery
 
-  function addMarker(title, latlng) {
+  function addMarker(title, latlng, cellNum) {
       var marker = new google.maps.Marker({
           title: title, 
           position: latlng,
           map: map // map to zmienna do naszej mapy
       });
-
+      marker.addListener('click', function(){
+        flkty.selectCell(cellNum);
+      });
       // marker.addListener('click', function(){
       //   infos.innerHTML = 'You clicked ' + title;
       // });
@@ -61,9 +64,18 @@ flkty.on( 'scroll', function( progress ) {
       // przechowuje utworzone markery w naszej tablicy
       markers.push(marker);
   }
+  var domMap = document.getElementById('map');
+
+  flkty.on( 'change', function( index ) {
+    var place = imageData[index].coords;
+    // Najpierw wykorzystujemy metodę panTo w obiekcie map do przesunięcia współrzędnych mapy:
+      map.panTo(place);
+			// A następnie zmieniamy powiększenie mapy:
+			map.setZoom(8);
+  });
+
   window.initMap = function() {
-      //wyszukujemy element, w którym ma być wyświetlona mapa
-      var domMap = document.getElementById('map');
+    
       map = new google.maps.Map(domMap, {
           //ustawiamy pozycję, w której ma znajdować się środek mapy
           center: imageData[0].coords,
@@ -72,10 +84,10 @@ flkty.on( 'scroll', function( progress ) {
       });
 
       for (var i = 0; i < imageData.length; i++){
-       addMarker(imageData[i].id, imageData[i].coords);	
+       addMarker(imageData[i].id, imageData[i].coords, i);	
       }
+
   }
-
-
+  
 }
  

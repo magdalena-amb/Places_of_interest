@@ -16,16 +16,9 @@
     <div class="progress-bar"></div>
     <!-- <p id="infos"></p> -->
     <div id="map"></div>
-      
-      <!-- <a href="#carousel-cell1">View cell 1</a>
-      <a href="#carousel-cell2">View cell 2</a>
-      <a href="#carousel-cell3">View cell 3</a>
-      <a href="#carousel-cell4">View cell 4</a>
-      <a href="#carousel-cell5">View cell 5</a> -->
     
 
     <script id="template-image" type="x-tmpl-mustache">
-        
         <div class="carousel-cell" id=" {{ id }} " style="background-image: url('{{ image }}')">
             <div class="container"> <h1> {{ title }} </h1> {{{ description }}}  </div>
         </div>
@@ -70,8 +63,9 @@
             }
         ];
     </script>
-    <script src='vendor/hash.js'></script>
+    
     <script src='vendor/flickity.pkgd.min.js'></script>
+    <script src='vendor/hash.js'></script>
     <script src='vendor/mustache.min.js'></script>
     <script src='js/script.js'></script>
     <script async defer
